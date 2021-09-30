@@ -4,18 +4,87 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body class = body>
-    <div id="bg">
-    </div>
-        <script src="script.js" async defer></script>
-    </body>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="body">
+  <script>console.log("testone")</script>
 
+  <div id = "gateicons">
+
+        <button id = "and-icon">
+        <p> <span id = "and-input1">0</span>-</p>
+        <p> |--and -- <span id = "and-output">0</span>-</p>
+        <p> <span id = "and-input2">0</span>-</p>
+        </button>
+        </div>
+
+        <button id = "or-icon">
+        <p> <span id = "or-input1">0</span>-</p>
+        <p> |-- or -- <span id = "or-output">0</span>-</p>
+        <p> <span id = "or-input2">0</span>-</p>
+        </button>
+        </div>
+
+        <button id = "nor-icon">
+        <p> <span id = "nor-input1">0</span>-</p>
+        <p> |-- nor -- <span id = "nor-output">0</span>-</p>
+        <p> <span id = "nor-input2">0</span>-</p>
+        </button>
+        </div>
+
+<script>console.log("test2")</script>
+    <div id="tools">
+
+        <div id = "gates">
+
+
+        <button id = "and" onclick="addAndGate()">
+        <p> <span id = "and-input1">0</span>-</p>
+        <p> |--and -- <span id = "and-output">0</span>-</p>
+        <p> <span id = "and-input2">0</span>-</p>
+        </button>
+        
+        <button id = "or" onclick="addOrGate()">
+        <p> <span id = "and-input1">0</span>-</p>
+        <p> |-- Or -- <span id = "or-output">0</span>-</p>
+        <p> <span id = "or-input2">0</span>-</p>
+        </button>
+
+        <button id = "nor" onclick="addNorGate()">
+        <p> <span id = "nor-input1">0</span>-</p>
+        <p> |--nor -- <span id = "nor-output">1</span>-</p>
+        <p> <span id = "nor-input2">0</span>-</p>
+        </button>
+        
+
+
+
+      </div>
+    </div>
+    <div id="bg"> 
+        
+      <div id="content">
+
+        <svg>
+          <filter id="wavy2">
+            <feturbulence
+              x="0"
+              y="0"
+              baseFrequency="0.02"
+              numOctaves="5"
+              seed="1"
+            ></feturbulence>
+            <feDisplacementMap in="SourceGraphic" scale="20" />
+          </filter>
+        </svg>
+      </div>
+    </div>
+    <script src="script.js" async defer></script>
+  </body>
 </html>
