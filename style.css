@@ -10,6 +10,8 @@
   --y-or: -200%;
   --x-nor: -200%;
   --y-nor: -200%;
+  --shadow-x: -200%;
+  --shadow-y: -200%;
 }
 
 #bg {
@@ -182,3 +184,18 @@
     top: var(--y-nor);
     z-index: 10;
 }
+
+
+#canvas {
+    height: 100%;
+    width: 100%;
+}
+
+@keyframes coolrotate {
+    from {
+      transform: scale(1, 1) translate(-0.1em, 0)
+    }
+    to {
+      transform: scale(-1, 1) translate(0, 0)
+    }
+  }
