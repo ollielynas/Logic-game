@@ -62,7 +62,7 @@ ele.addEventListener("mousedown", function (e) {
         andOutputOne.innerHTML = "";
         andOutputOne.id ='node'+nodeNum;
         andOutputOne.onclick = "nodeIn("+nodeNum+")";
-        andOutputOne.setAttribute('onclick',   "nodeIn("+nodeNum+")");
+        andOutputOne.setAttribute('onclick',   "nodeOut("+nodeNum+")");
         andOutputOne.style.backgroundColor = "black";
         andOutputOne.style.borderRadius = "100%";
         andOutputOne.style.position = "absolute";
@@ -148,7 +148,7 @@ newContent.style.transform = "scale(0.8)"
         orOutputOne.innerHTML = "";
         orOutputOne.id ='node'+nodeNum;
         orOutputOne.onclick = "nodeIn("+nodeNum+")";
-        orOutputOne.setAttribute('onclick',   "nodeIn("+nodeNum+")");
+        orOutputOne.setAttribute('onclick',   "nodeOut("+nodeNum+")");
         orOutputOne.style.backgroundColor = "black";
         orOutputOne.style.borderRadius = "100%";
         orOutputOne.style.position = "absolute";
@@ -215,7 +215,7 @@ newContent.style.transform = "scale(0.8)"
         norOutputOne.innerHTML = "";
         norOutputOne.id ='node'+nodeNum;
         norOutputOne.onclick = "nodeIn("+nodeNum+")";
-        norOutputOne.setAttribute('onclick',   "nodeIn("+nodeNum+")");
+        norOutputOne.setAttribute('onclick',   "nodeOut("+nodeNum+")");
         norOutputOne.style.backgroundColor = "black";
         norOutputOne.style.borderRadius = "100%";
         norOutputOne.style.position = "absolute";
@@ -363,16 +363,47 @@ noRightClick.addEventListener("contextmenu", e => e.preventDefault());
 
 
 function nodeIn(nodeNumber) {
+
+
     
+
+
+
+    var rectContent = document.getElementById("content").getBoundingClientRect();
     console.log(nodeNumber)
     window.placeIcon = "line"
+    var rectNodeIn = document.getElementById("node"+nodeNumber).getBoundingClientRect();
     var c = document.getElementById("canvas");
         var ctx = c.getContext("2d");
+        ctx.strokeStyle = "black";
+        ctx.lineWidth = 1;
         ctx.beginPath();
-        ctx.moveTo(0, 0);
-        ctx.lineTo(window.x, window.y);
+        ctx.moveTo(rectNodeIn.x, rectNodeIn.y);
+        ctx.lineTo(window.nodeOutCoords.x, window.nodeOutCoords.y);
         ctx.stroke();
 }
 
-console.log("loaded js")
+function nodeOut(nodeNumber) {
+    var rectNodeOut = document.getElementById("node"+nodeNumber).getBoundingClientRect();
+    console.log(nodeNumber)
+    window.placeIcon = ""
+    window.nodeOutCoords = rectNodeOut
+    
+}
 
+
+
+console.log("loaded js")
+var rectContent = document.getElementById("content").getBoundingClientRect();
+console.log(rectCanvas)
+document.getElementById("canvas").style.height = rectContent.height+"px";
+document.getElementById("canvas").style.width = rectContent.width+"px";
+var rectCanvas = document.getElementById("canvas").getBoundingClientRect();
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+void ctx.scale(300/rectCanvas.width, 150/rectCanvas.height);
+
+
+function move() {
+    
+}
